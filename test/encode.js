@@ -37,5 +37,10 @@ describe('i3p', function() {
         var b = i3p.encode();
       }).should.throw();
     });
+    it('should handle missing `message` parameter', function() {
+      (function() {
+        i3p.encode(0);
+      }).should.not.throw();
+    });
   });
 });
