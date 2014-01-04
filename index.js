@@ -6,9 +6,10 @@ module.exports.encode = function encode(type, message) {
     throw new Error('Unknown type ' + type);
   }
   message = message || '';
-  var b = new Buffer(14 + message.length);
+  var len = message.length;
+  var b = new Buffer(14 + len);
   b.write('i3-ipc');
-  b.writeUInt32LE(message.length, 6);
+  b.writeUInt32LE(len, 6);
   b.writeUInt32LE(type, 10);
   return b;
 };
