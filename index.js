@@ -1,4 +1,4 @@
-module.exports.encode = function encode(type) {
+module.exports.encode = function encode(type, message) {
   if(type == null) {
     throw new Error('Type cannot be empty');
   }
