@@ -1,0 +1,21 @@
+{
+  "name": "i3-protocol",
+  "version": "0.0.0",
+  "description": "Encode&decode i3 ipc messages",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test/*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/madbence/node-i3-protocol.git"
+  },
+  "keywords": [
+    "i3"
+  ],
+  "author": "Bence Dányi <madbence@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/madbence/node-i3-protocol/issues"
+  }
+}
