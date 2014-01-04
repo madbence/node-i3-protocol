@@ -11,6 +11,12 @@ describe('i3p', function() {
       var b = i3p.encode(0, '');
       b.toString().should.startWith('i3-ipc');
     });
+    it('should return Buffer with correct length', function() {
+      var b1 = i3p.encode(0, '');
+      var b2 = i3p.encode(0, 'asd');
+      b1.length.should.equal(14);
+      b2.length.should.equal(17);
+    });
     it('should set the correct type for the message', function() {
       var b1 = i3p.encode(0, '');
       var b2 = i3p.encode(1, '');
