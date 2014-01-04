@@ -31,10 +31,10 @@ describe('i3p', function() {
     });
     it('should expect `type` parameter', function() {
       (function() {
-        var b = i3p.encode(0, '');
+        i3p.encode(0, '');
       }).should.not.throw();
       (function() {
-        var b = i3p.encode();
+        i3p.encode();
       }).should.throw();
     });
     it('should handle missing `message` parameter', function() {
