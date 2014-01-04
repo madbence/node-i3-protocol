@@ -1,6 +1,6 @@
 {
   "name": "i3-protocol",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Encode&decode i3 ipc messages",
   "main": "index.js",
   "scripts": {
