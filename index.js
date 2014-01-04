@@ -2,6 +2,9 @@ module.exports.encode = function encode(type, message) {
   if(type == null) {
     throw new Error('Type cannot be empty');
   }
+  if(type > 7 || type < 0) {
+    throw new Error('Unknown type ' + type);
+  }
   message = message || '';
   var b = new Buffer(14 + message.length);
   b.write('i3-ipc');
