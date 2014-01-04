@@ -7,6 +7,10 @@ describe('i3p', function() {
       var b = i3p.encode(0);
       b.should.be.a.Buffer;
     });
+    it('should return Buffer with i3-ipc prefix', function() {
+      var b = i3p.encode(0);
+      b.toString().should.startWith('i3-ipc');
+    });
     it('should expect `type` parameter', function() {
       (function() {
         var b = i3p.encode(0);
