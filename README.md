@@ -16,7 +16,7 @@ npm install i3-protocol
 Encodes the given message. For available types, see [i3 IPC](http://i3wm.org/docs/ipc.html#_sending_messages_to_i3)
 
 ```js
-var i3p = require('i3p');
+var i3p = require('i3-protocol');
 var message = i3p.encode(7); // get version info
 socket.write(message);
 ```
