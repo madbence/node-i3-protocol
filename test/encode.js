@@ -42,5 +42,13 @@ describe('i3p', function() {
         i3p.encode(0);
       }).should.not.throw();
     });
+    it('should throw Error when type is unknown', function() {
+      (function() {
+        i3p.encode(-1);
+      }).should.throw();
+      (function() {
+        i3p.encode(8);
+      }).should.throw();
+    });
   });
 });
