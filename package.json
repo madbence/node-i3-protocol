@@ -4,7 +4,7 @@
   "description": "Encode&decode i3 ipc messages",
   "main": "index.js",
   "scripts": {
-    "test": "mocha test/*"
+    "test": "node_modules/mocha/bin/mocha -R spec test/*"
   },
   "repository": {
     "type": "git",
@@ -19,6 +19,7 @@
     "url": "https://github.com/madbence/node-i3-protocol/issues"
   },
   "devDependencies": {
-    "should": "~2.1.1"
+    "should": "~2.1.1",
+    "mocha": "~1.16.2"
   }
 }
