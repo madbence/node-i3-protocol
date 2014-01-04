@@ -2,5 +2,7 @@ module.exports.encode = function encode(type) {
   if(type == null) {
     throw new Error('Type cannot be empty');
   }
-  return new Buffer('i3-ipc');
+  var b = new Buffer('i3-ipcxxxxyyyy');
+  b.writeUInt32BE(type, 10);
+  return b;
 };
