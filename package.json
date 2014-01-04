@@ -17,5 +17,8 @@
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/madbence/node-i3-protocol/issues"
+  },
+  "devDependencies": {
+    "should": "~2.1.1"
   }
 }
