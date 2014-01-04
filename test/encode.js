@@ -20,14 +20,14 @@ describe('i3p', function() {
     it('should set the correct message length', function() {
       var b1 = i3p.encode(0, '');
       var b2 = i3p.encode(0, 'asd');
-      b1.readUInt32BE(6).should.equal(0);
-      b2.readUInt32BE(6).should.equal(3);
+      b1.readUInt32LE(6).should.equal(0);
+      b2.readUInt32LE(6).should.equal(3);
     });
     it('should set the correct type for the message', function() {
       var b1 = i3p.encode(0, '');
       var b2 = i3p.encode(1, '');
-      b1.readUInt32BE(10).should.equal(0);
-      b2.readUInt32BE(10).should.equal(1);
+      b1.readUInt32LE(10).should.equal(0);
+      b2.readUInt32LE(10).should.equal(1);
     });
     it('should expect `type` parameter', function() {
       (function() {
