@@ -26,5 +26,11 @@ exports.decode = function decode(buffer) {
   if(type > 7) {
     throw new Error('Buffer has wrong type');
   }
-  return {};
+  if(len == 0) {
+    return { type: type };
+  }
+  return {
+    type: type,
+    message: JSON.parse(buffer.slice(14).toString())
+  };
 };
