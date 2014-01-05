@@ -51,4 +51,10 @@ describe('i3p', function() {
       }).should.throw();
     });
   });
+  describe('#decode', function() {
+    it('should return an object', function() {
+      var o = i3p.decode(new Buffer(1));
+      o.should.be.an.Object
+    });
+  });
 });
