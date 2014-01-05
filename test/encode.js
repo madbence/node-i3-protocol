@@ -50,5 +50,10 @@ describe('i3p', function() {
         i3p.encode(8);
       }).should.throw();
     });
+    it('should encode message', function() {
+      var message = { foo: 'bar' };
+      var b = i3p.encode(0, message);
+      b.slice(14).toString().should.equal(JSON.stringify(message));
+    });
   });
 });
