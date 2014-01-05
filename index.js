@@ -22,5 +22,9 @@ exports.decode = function decode(buffer) {
   if(len !== buffer.length-14) {
     throw new Error('Buffer has wrong length');
   }
+  var type = buffer.readUInt32LE(10);
+  if(type > 7) {
+    throw new Error('Buffer has wrong type');
+  }
   return {};
 };
