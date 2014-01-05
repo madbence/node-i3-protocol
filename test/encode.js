@@ -53,7 +53,7 @@ describe('i3p', function() {
   });
   describe('#decode', function() {
     it('should return an object', function() {
-      var o = i3p.decode(new Buffer(1));
+      var o = i3p.decode(new Buffer('i3-ipc'));
       o.should.be.an.Object
     });
     it('should check the buffer for the magic prefix', function() {
