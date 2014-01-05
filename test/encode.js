@@ -75,5 +75,13 @@ describe('i3p', function() {
         i3p.decode(new Buffer('i3-ipc\x00\x00\x00\x00aaaa'));
       }).should.not.throw();
     });
+    it('should check for the correct type', function() {
+      (function() {
+        i3p.decode(new Buffer('i3-ipc\x00\x00\x00\x00\x08\x00\x00\x00'));
+      }).should.throw();
+      (function() {
+        i3p.decode(new Buffer('i3-ipc\x00\x00\x00\x00\x01\x00\x00\x00'));
+      }).should.not.throw();
+    });
   });
 });
