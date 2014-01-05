@@ -18,5 +18,9 @@ exports.decode = function decode(buffer) {
   if(buffer.toString().slice(0, 6) !== 'i3-ipc') {
     throw new Error('`i3-ipc` prefix missing form the buffer');
   }
+  var len = buffer.readUInt32LE(6);
+  if(len !== buffer.length-14) {
+    throw new Error('Buffer has wrong length');
+  }
   return {};
 };
