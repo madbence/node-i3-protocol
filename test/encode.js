@@ -61,7 +61,7 @@ describe('i3p', function() {
         i3p.decode(new Buffer(1));
       }).should.throw();
       (function() {
-        i3p.decode(new Buffer('i3-ipc\x00\x00\x00\x00aaaa'));
+        i3p.decode(new Buffer('i3-ipc\x00\x00\x00\x00\x00\x00\x00\x00'));
       }).should.not.throw();
     });
     it('should check for correct length field', function() {
@@ -69,10 +69,10 @@ describe('i3p', function() {
         i3p.decode(new Buffer('i3-ipc\x00\x00\x00\x00'));
       }).should.throw();
       (function() {
-        i3p.decode(new Buffer('i3-ipc\x00\x00\x00\x00aaaabbbb'));
+        i3p.decode(new Buffer('i3-ipc\x00\x00\x00\x00\x00\x00\x00\x00bbbb'));
       }).should.throw();
       (function() {
-        i3p.decode(new Buffer('i3-ipc\x00\x00\x00\x00aaaa'));
+        i3p.decode(new Buffer('i3-ipc\x00\x00\x00\x00\x00\x00\x00\x00'));
       }).should.not.throw();
     });
     it('should check for the correct type', function() {
