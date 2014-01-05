@@ -13,3 +13,7 @@ module.exports.encode = function encode(type, message) {
   b.writeUInt32LE(type, 10);
   return b;
 };
+
+exports.decode = function decode(buffer) {
+  return {};
+};
