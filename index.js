@@ -15,7 +15,7 @@ module.exports.encode = function encode(type, message) {
 };
 
 exports.decode = function decode(buffer) {
-  if(buffer.toString().slice(0, 6) !== 'i3-ipc') {
+  if(buffer.slice(0, 6).toString() !== 'i3-ipc') {
     throw new Error('`i3-ipc` prefix missing form the buffer');
   }
   var len = buffer.readUInt32LE(6);
