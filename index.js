@@ -5,12 +5,13 @@ module.exports.encode = function encode(type, message) {
   if(type > 7 || type < 0) {
     throw new Error('Unknown type ' + type);
   }
-  message = message || '';
+  message = message ? JSON.stringify(message) : '';
   var len = message.length;
   var b = new Buffer(14 + len);
   b.write('i3-ipc');
   b.writeUInt32LE(len, 6);
   b.writeUInt32LE(type, 10);
+  b.write(message, 14);
   return b;
 };
 
