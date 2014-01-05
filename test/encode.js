@@ -53,7 +53,7 @@ describe('i3p', function() {
   });
   describe('#decode', function() {
     it('should return an object', function() {
-      var o = i3p.decode(new Buffer('i3-ipc'));
+      var o = i3p.decode(new Buffer('i3-ipc\x00\x00\x00\x00\x00\x00\x00\x00'));
       o.should.be.an.Object
     });
     it('should check the buffer for the magic prefix', function() {
@@ -61,7 +61,7 @@ describe('i3p', function() {
         i3p.decode(new Buffer(1));
       }).should.throw();
       (function() {
-        i3p.decode(new Buffer('i3-ipc'));
+        i3p.decode(new Buffer('i3-ipc\x00\x00\x00\x00aaaa'));
       }).should.not.throw();
     });
     it('should check for correct length field', function() {
