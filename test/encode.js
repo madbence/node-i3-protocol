@@ -56,5 +56,13 @@ describe('i3p', function() {
       var o = i3p.decode(new Buffer(1));
       o.should.be.an.Object
     });
+    it('should check the buffer for the magic prefix', function() {
+      (function() {
+        i3p.decode(new Buffer(1));
+      }).should.throw();
+      (function() {
+        i3p.decode(new Buffer('i3-ipc'));
+      }).should.not.throw();
+    });
   });
 });
