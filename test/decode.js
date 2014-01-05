@@ -34,5 +34,12 @@ describe('i3p', function() {
         i3p.decode(new Buffer('i3-ipc\x00\x00\x00\x00\x01\x00\x00\x00'));
       }).should.not.throw();
     });
+    it('should parse the response JSON', function() {
+      var message = JSON.stringify({ foo: 'bar' });
+      var buffer = new Buffer('i3-ipc' + String.fromCharCode(message.length) + '\x00\x00\x00\x00\x00\x00\x00' + message);
+      var ret = i3p.decode(buffer);
+      should.exist(ret.message);
+      JSON.stringify(ret.message).should.equal(message);
+    });
   });
 });
