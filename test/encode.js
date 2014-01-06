@@ -13,13 +13,13 @@ describe('i3p', function() {
     });
     it('should return Buffer with correct length', function() {
       var b1 = i3p.encode(0, '');
-      var b2 = i3p.encode(0, {});
+      var b2 = i3p.encode(0, 'ab');
       b1.length.should.equal(14);
       b2.length.should.equal(16);
     });
     it('should set the correct message length', function() {
       var b1 = i3p.encode(0, '');
-      var b2 = i3p.encode(0, {});
+      var b2 = i3p.encode(0, 'ab');
       b1.readUInt32LE(6).should.equal(0);
       b2.readUInt32LE(6).should.equal(2);
     });
@@ -51,9 +51,8 @@ describe('i3p', function() {
       }).should.throw();
     });
     it('should encode message', function() {
-      var message = { foo: 'bar' };
-      var b = i3p.encode(0, message);
-      b.slice(14).toString().should.equal(JSON.stringify(message));
+      var b = i3p.encode(0, 'abc');
+      b.slice(14).toString().should.equal('abc');
     });
   });
 });
