@@ -5,7 +5,7 @@ describe('i3p', function() {
   describe('#encode', function() {
     it('should return `Buffer`', function() {
       var b = i3p.encode(0, '');
-      b.should.be.a.Buffer;
+      b.should.be.an.instanceOf(Buffer);
     });
     it('should return Buffer with i3-ipc prefix', function() {
       var b = i3p.encode(0, '');
