@@ -1,4 +1,4 @@
-node-i3-protocol [![Build Status](https://travis-ci.org/madbence/node-i3-protocol.png?branch=master)](https://travis-ci.org/madbence/node-i3-protocol)
+node-i3-protocol [![Build Status](https://travis-ci.org/madbence/node-i3-protocol.png?branch=master)](https://travis-ci.org/madbence/node-i3-protocol) [![Coverage Status](https://coveralls.io/repos/madbence/node-i3-protocol/badge.png?branch=master)](https://coveralls.io/r/madbence/node-i3-protocol?branch=master)
 ================
 
 encode&amp;decode i3 ipc messages
